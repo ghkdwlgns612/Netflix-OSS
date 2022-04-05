@@ -1,0 +1,12 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal();
+    }
+}
+
+rootProject.name = 'netoss'
+
+include 'service1'
+include 'service2'
+include 'service3'
+include 'config'
