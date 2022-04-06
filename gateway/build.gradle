@@ -1,26 +1,4 @@
-plugins {
-    id 'java'
-}
-
-group 'com.example'
-version '0.0.1-SNAPSHOT'
-
-repositories {
-    mavenCentral()
-}
-
-bootJar {
-    enabled = false
-}
-
-jar {
-    enabled = true
-}
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
-}
-
-test {
-    useJUnitPlatform()
+    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-zuul'
 }
