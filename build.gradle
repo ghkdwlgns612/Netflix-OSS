@@ -43,3 +43,7 @@ subprojects {
         delete 'out'
     }
 }
+
+bootJar {
+    enabled = false
+}
