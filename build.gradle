@@ -42,6 +42,7 @@ subprojects {
 project(':service1') {
     dependencies {
         implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+        implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
         implementation group: 'org.codehaus.jettison', name: 'jettison', version: '1.4.1'
     }
     dependencyManagement {
@@ -54,6 +55,7 @@ project(':service1') {
 project(':service2') {
     dependencies {
         implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+        implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
         implementation group: 'org.codehaus.jettison', name: 'jettison', version: '1.4.1'
     }
     dependencyManagement {
@@ -66,6 +68,7 @@ project(':service2') {
 project(':service3') {
     dependencies {
         implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+        implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
         implementation group: 'org.codehaus.jettison', name: 'jettison', version: '1.4.1'
     }
     dependencyManagement {
