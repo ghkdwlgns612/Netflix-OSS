@@ -1,0 +1,76 @@
+version: '2'
+
+services:
+
+  config-server:
+    restart: always
+    container_name: config-server
+    image: config-server:latest
+    build:
+      context: .
+      dockerfile: config/Dockerfile
+    ports:
+      - "8888/tcp"
+    networks:
+      - spring-cloud-network
+
+  eureka-server:
+    restart: always
+    container_name: eureka-server
+    image: eureka-server:latest
+    build:
+      context: .
+      dockerfile: eureka/Dockerfile
+    ports:
+      - "9999/tcp"
+    networks:
+      - spring-cloud-network
+
+  gateway-server:
+    restart: always
+    container_name: gateway-server
+    image: gateway-server:latest
+    build:
+      context: .
+      dockerfile: gateway/Dockerfile
+    ports:
+      - "7777/tcp"
+    networks:
+      - spring-cloud-network
+
+#  service1-server:
+#    container_name: service1-server
+#    build:
+#      context: docker-service1-server
+#      dockerfile: Dockerfile
+#    image: gateway-server:latest
+#    ports:
+#      - "8081/tcp"
+#    networks:
+#      - spring-cloud-network
+#
+#  service2-server:
+#    container_name: service2-server
+#    build:
+#      context: docker-service2-server
+#      dockerfile: Dockerfile
+#    image: service2-server:latest
+#    ports:
+#      - "8082/tcp"
+#    networks:
+#      - spring-cloud-network
+#
+#  service3-server:
+#    container_name: service3-server
+#    build:
+#      context: docker-service3-server
+#      dockerfile: Dockerfile
+#    image: service3-server:latest
+#    ports:
+#      - "8083/tcp"
+#    networks:
+#      - spring-cloud-network
+
+networks:
+  spring-cloud-network:
+    driver: bridge
