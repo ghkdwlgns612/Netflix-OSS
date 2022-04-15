@@ -1,42 +1,28 @@
 version: '2'
 
-services:
+#docker images build -> save docker images -> docker images run
 
+services:
   config-server:
-    restart: always
-    container_name: config-server
-    image: config-server:latest
-    build:
-      context: .
-      dockerfile: config/Dockerfile
+#    container_name: config-server
+#    image: config-server
+    build: ../netoss/config
     ports:
       - "8888/tcp"
-    networks:
-      - spring-cloud-network
 
   eureka-server:
-    restart: always
-    container_name: eureka-server
-    image: eureka-server:latest
-    build:
-      context: .
-      dockerfile: eureka/Dockerfile
+#    container_name: eureka-server
+#    image: eureka-server
+    build: ../netoss/eureka
     ports:
       - "9999/tcp"
-    networks:
-      - spring-cloud-network
 
   gateway-server:
-    restart: always
-    container_name: gateway-server
-    image: gateway-server:latest
-    build:
-      context: .
-      dockerfile: gateway/Dockerfile
+#    container_name: gateway-server
+#    image: gateway-server
+    build: ../netoss/gateway
     ports:
       - "7777/tcp"
-    networks:
-      - spring-cloud-network
 
 #  service1-server:
 #    container_name: service1-server
@@ -71,6 +57,6 @@ services:
 #    networks:
 #      - spring-cloud-network
 
-networks:
-  spring-cloud-network:
-    driver: bridge
+#networks:
+#  spring-cloud-network:
+#    driver: bridge
